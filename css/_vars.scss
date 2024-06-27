@@ -1,0 +1,40 @@
+// color
+$header: #B47FF6;
+$offer: #7029CB;
+$footer: #D87FF6;
+$main-bg-color: #A6C9FF;
+$first-section-bg: #3ADE4B;
+$second-section-bg: #D4FF5A;
+$second-section-item-bg: #497957;
+$second-section-item-solid: #00FF4A; 
+$text-color: #fff;
+$btn-bg: #FF4B4B;
+$btn-text-top: #F3F3F3;
+
+$transition: all .3s ease;
+
+$breakpoints: (
+  'sm-max': 767.9px,
+  'md': 768px,
+  'md-max': 1023.9px,
+  'lg': 1024px,
+  'lg-max': 1439.9px,
+  'xl': 1440px
+);
+
+@mixin media($breakpoint) {
+  $size: map-get($breakpoints, $breakpoint);
+  @if $size {
+    @if str-slice($breakpoint, -4) == '-max' {
+      @media (max-width: $size) {
+        @content;
+      }
+    } @else {
+      @media (min-width: $size) {
+        @content;
+      }
+    }
+  } @else {
+    @warn "Breakpoint #{$breakpoint} not found in $breakpoints map.";
+  }
+}
