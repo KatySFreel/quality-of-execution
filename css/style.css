@@ -270,7 +270,6 @@ svg {
   flex-direction: column;
   row-gap: 10px;
   width: 32px;
-  margin-left: auto;
   cursor: pointer;
 }
 .burger:hover span {
@@ -292,6 +291,11 @@ svg {
   -o-transition: all 0.3s ease-in-out;
 }
 
+@media (max-width: 1023.9px) {
+  .header-mobile {
+    margin-left: auto;
+  }
+}
 .header-mobile__content {
   width: 100%;
   max-width: 451px;

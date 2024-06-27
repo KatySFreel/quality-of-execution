@@ -53,7 +53,6 @@
 	flex-direction: column;
 	row-gap: 10px;
 	width: 32px;
-	margin-left: auto;
 	cursor: pointer;
 
 	&:hover {
@@ -79,6 +78,10 @@
 }
 
 .header-mobile {
+	@include media(md-max) {
+		margin-left: auto;
+	}
+
 	&__content {
 		width: 100%;
 		max-width: 451px;
